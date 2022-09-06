@@ -1,6 +1,6 @@
 # DJI Control Client
 
-A Python Wrapper over the API Calls to the DJI Control Server.
+A Python Wrapper over the API Calls to the [DJIControlServer](https://github.com/dkapur17/DJIControlServer).
 
 ### Classes
 
