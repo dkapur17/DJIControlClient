@@ -1,6 +1,6 @@
 # DJI Control Client
 
-A Python Wrapper over the API Calls to the DJI Control Server.
+A Python Wrapper over the API Calls to the [DJIControlServer](https://github.com/dkapur17/DJIControlServer).
 
 ### Classes
 
@@ -24,7 +24,7 @@ Following are the possible (non-primitive) return types from each method. Which 
 
 * `takeOff()`: Sends takeoff signal to the drone. Returns a response **ONCE TAKEOFF IS INITIATED, NOT COMPLETED** (thus make sure to add a sufficient delay after the takeoff call before making any other calls). Returns a dict with completion status, and error message if any.
 
-* `land()`: Sends land signal to the drone. Returns a response **ONCE LANDING IS INITIATED, NOT COMPLETED**` (thus make sure to add a sufficient delay after the landing call before making any other calls). If landing protection is enabled, this will cause the drone to descent to 0.3m off the ground and wait for user confirmation to completed landing. If landing protection is disabled, then it causes the drone to land immidiately.
+* `land()`: Sends land signal to the drone. Returns a response **ONCE LANDING IS INITIATED, NOT COMPLETED** (thus make sure to add a sufficient delay after the landing call before making any other calls). If landing protection is enabled, this will cause the drone to descent to 0.3m off the ground and wait for user confirmation to completed landing. If landing protection is disabled, then it causes the drone to land immidiately.
 
 * `confirmLanding()`: Sends landing confirmation to the drone. Returns a response **ONCE LANDING CONFIRMATION IS INITIATED, NOT COMPLETED** (thus make sure to add sufficient delay after the landing call before making any other calls). This to be called after calling `land()` only if landing protection is enabled.
 
@@ -74,7 +74,7 @@ Following are the possible (non-primitive) return types from each method. Which 
 
 * `startCollectingIMUState(interval: int)`: Starts a coroutine on the server that records the IMU state every `interval` milliseconds. Returns `CommandCompleted`.
 
-* stopCollectingIMUState()`: Stops the coroutine on the server that records the IMU states. Returns `CommandCompleted`.
+* `stopCollectingIMUState()`: Stops the coroutine on the server that records the IMU states. Returns `CommandCompleted`.
 
 * `getCollectedIMUStates()`: Returns a list of `IMUState` collected between the calls to `startCollectingIMUState` and `stopCollectingIMUState`. Returns `CommandCompleted` in case of an error.
 
