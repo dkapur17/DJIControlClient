@@ -83,3 +83,10 @@ Following are the possible (non-primitive) return types from each method. Which 
 * `getCurrentIMUState()`: Returns the current IMU states as `IMUState`. Returns `CommandCompleted` in case of an error.
 
 * `getHeading()`: Returns the current heading from true north in degrees. Returns `CommandCompleted` in case of an error.
+
+
+* `captureShot()`: Takes a single shot from the drone's camera and returns `CommandCompleted`.
+
+* `pitchGimbal(angle: float)`: Pitches the gimbal. Restricted between 0 and 90 degrees, where 0 is aligned with the heading of the drone and 90 is perpendicularly downwards. Returns `CommandCompleted`.
+
+* `fetchPreviewFromIndex(index: int)`: Returns the Base64 encoded string of the low-res preview of the media item at the given index. The media items are sorted from most recent to least recent before indexing. Returns `CommandCompleted` in case of an error.

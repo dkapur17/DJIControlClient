@@ -211,13 +211,8 @@ class DJIControlClient:
     def captureShot(self) -> Dict[str, Any]:
         return self.makeReqAndReturnJSON('/captureShot')
 
-    def fetchThumbnailFromIndex(self, index: int) -> Dict[str, Any]:
-        thumbnail = self.makeReqAndReturnJSON(
-            f'/fetchThumbnailFromIndex/{index}')
-        if 'state' in thumbnail:
-            return thumbnail['state']
-        else:
-            return thumbnail
+    def pitchGimbal(self, angle: float) -> Dict[str, Any]:
+        return self.makeReqAndReturnJSON(f'/pitchGimbal/{angle}')
 
     def fetchPreviewFromIndex(self, index: int) -> Dict[str, Any]:
         preview = self.makeReqAndReturnJSON(f'/fetchPreviewFromIndex/{index}')
@@ -225,10 +220,3 @@ class DJIControlClient:
             return preview['state']
         else:
             return preview
-
-    def fetchMediaFromIndex(self, index: int) -> Dict[str, Any]:
-        media = self.makeReqAndReturnJSON(f'/fetchMediaFromIndex/{index}')
-        if 'state' in media:
-            return media['state']
-        else:
-            return media
