@@ -206,6 +206,14 @@ class DJIControlClient:
         else:
             return heading
 
+    # Altitude
+    def getAltitude(self) -> Dict[str, Any]:
+        altitude = self.makeReqAndReturnJSON('/getAltitude')
+        if 'state' in altitude:
+            return altitude['state']
+        else:
+            return altitude
+
     # Camera Actions
 
     def captureShot(self) -> Dict[str, Any]:
