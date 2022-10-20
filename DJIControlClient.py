@@ -219,6 +219,12 @@ class DJIControlClient:
     def captureShot(self) -> Dict[str, Any]:
         return self.makeReqAndReturnJSON('/captureShot')
 
+    def startVideoRecording(self) -> Dict[str, Any]:
+        return self.makeReqAndReturnJSON('/startVideoRecording')
+
+    def stopVideoRecording(self) -> Dict[str, Any]:
+        return self.makeReqAndReturnJSON('/stopVideoRecording')
+
     def pitchGimbal(self, angle: float) -> Dict[str, Any]:
         return self.makeReqAndReturnJSON(f'/pitchGimbal/{angle}')
 
