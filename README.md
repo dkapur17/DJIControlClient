@@ -1,5 +1,9 @@
 # DJI Control Client
 
+<div align="center">
+    <img src="assets/Logo.png" width=300/>
+</div>
+
 A Python Wrapper over the API Calls to the [DJIControlServer](https://github.com/dkapur17/DJIControlServer).
 
 ### Classes
